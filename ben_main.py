@@ -2,11 +2,11 @@ import numpy as np
 import time
 import math
 import serial
-from URDF import benURDFV3
+from URDF import benURDF
 from collections import deque
 
-from pykinect2 import nui
-from pykinect2.nui import JointId, TransformSmoothParameters
+from pykinect2024 import nui
+from pykinect2024.nui import JointId, TransformSmoothParameters
 
 #14 = shoulder pitch
 #13 = arm raise

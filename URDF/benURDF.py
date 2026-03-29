@@ -1,6 +1,6 @@
 import os
-os.environ['TCL_LIBRARY'] = r'C:\Python27\tcl\tcl8.5'
-os.environ['TK_LIBRARY'] = r'C:\Python27\tcl\tk8.5'
+#os.environ['TCL_LIBRARY'] = r'C:\Python310\tcl\tcl8.6'
+#os.environ['TK_LIBRARY'] = r'C:\Python310\tcl\tk8.6'
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -16,7 +16,7 @@ class Ben():
     def __init__(self):
         self.torso, self.left_arm, self.right_arm = self.benURDF()
     def benURDF(self):
-        torso = Chain(name="toseo", links=[
+        torso = Chain(name="torso", links=[
             OriginLink(),
             
         ])
@@ -205,14 +205,10 @@ if __name__ == "__main__":
     #ben.debug(left_angles,right_angles)
     
     if left == 1:
-
-
-    
         #ben.debug(left_angles,right_angles)
         target_position = [0.1, -0.1, 0.02]
         ben.ik_target(target_position, ben.left_arm)
     else:
-
         #ben.debug(left_angles,right_angles)
         target_position = [0.1, 0.1, 0.02]
         ben.ik_target(target_position, ben.right_arm)
