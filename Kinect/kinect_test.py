@@ -20,6 +20,9 @@ try:
                         right_hand = joints[JointType_HandRight]
                         positionRH = right_hand.Position
 
+                        right_hand_angle = joints[JointType_HandRight]
+                        angle = right_hand_angle.qu
+
                         print(positionRH)
 
                     elif not body.is_tracked:
