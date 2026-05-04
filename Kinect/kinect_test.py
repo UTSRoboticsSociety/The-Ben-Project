@@ -12,25 +12,22 @@ try:
             bodies = kinect.get_last_body_frame()
 
             if bodies is not None:
-                for i in range(kinect.max_body_count):
+                for i in range(0,kinect.max_body_count):
                     body = bodies.bodies[i]
-                    if body.is_tracked:
+                    if not body.is_tracked:
+                        continue
+                    
+                    elif body.is_tracked:
                         joints = body.joints
-                        # Example: grab the right hand joint
-                        right_hand = joints[JointType_HandRight]
+                        
+                        right_hand = joints[PyKinect2024.JointType_HandRight]
                         positionRH = right_hand.Position
 
-                        right_hand_angle = joints[JointType_HandRight]
-                        angle = right_hand_angle.qu
+                        print(positionRH.x)
+                        
+                        
 
-                        print(positionRH)
-
-                    elif not body.is_tracked:
-                        print("no body found")
-
-                    # Also available per body:
                     # body.joint_orientations[JointType_HandRight]  ← quaternion
-                    # body.hand_right_state   ← open/closed/lasso
                     # body.tracking_id        ← unique ID per person
 
 finally:
