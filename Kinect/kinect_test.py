@@ -2,14 +2,16 @@ from pykinect2024 import PyKinect2024
 from pykinect2024.PyKinect2024 import *
 from pykinect2024.PyKinectRuntime import PyKinectRuntime
 
+#This code is the barebones basics in getting an output from the xbox kinect v2
+
 kinect = PyKinectRuntime(FrameSourceTypes_Body)
 
 print("Kinect open — stand in front of it!")
 
 try:
     while True:
-        if kinect.has_new_body_frame():
-            bodies = kinect.get_last_body_frame()
+        if kinect.has_new_body_frame(): #checks if the kinect has recieved new body frame (new person walks into frame)
+            bodies = kinect.get_last_body_frame() #from the detected body in frame, we obtain the joint positions and tracking status 
 
             if bodies is not None:
                 for i in range(0,kinect.max_body_count):

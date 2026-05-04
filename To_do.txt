@@ -1,0 +1,31 @@
+To do
+
+====== Programming ======
+
+    [basic]
+    1. Pygame ui
+    2. URDF
+    3. Kinect joint infomation
+        a. Mapping wolrd coordinates
+        b. Obtaining Quanternions
+        c. Locking onto a person
+
+    4. Simaultion through matplotlib through the ikpy package
+
+    [Advanced]
+    5. simulate robot walking physics in webots
+
+====== Mechanical ======
+
+    [basic]
+    1. Design mounting plate
+        a. 3d print hip attachment plate to upper body
+        b. 
+    2. zero servos
+    3. design supporting bracket for ben to move on
+    
+
+    [Advanced]
+ 
+    
+

@@ -1,6 +1,7 @@
 from Pygame import user_gui 
 import pygame
 
+#this is used for testing the pygame gui
 pygame.init()
 screen = pygame.display.set_mode((800, 600))
 pygame.display.set_caption("Kinect Skeleton (Stable)")

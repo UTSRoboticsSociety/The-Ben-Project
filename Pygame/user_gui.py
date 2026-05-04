@@ -1,5 +1,7 @@
 import pygame
 
+#Written by Fedor
+
 
 def draw_point(screen, x, y):
     pygame.draw.circle(screen, (255, 140, 0), (int(x), int(y)), 6)
@@ -7,7 +9,7 @@ def draw_point(screen, x, y):
 def draw_line(screen, x1, y1, x2, y2):
     pygame.draw.line(screen, (255, 140, 0), (int(x1), int(y1)), (int(x2), int(y2)), 3)
 
-def draw(screen, s):
+def draw(screen, s): #will need to map world coordinates to image plane coordinates for accurate tracking
 
     CENTER_X = 400
     CENTER_Y = 190
