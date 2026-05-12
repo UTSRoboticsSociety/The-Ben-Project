@@ -12,15 +12,23 @@ def draw_line(screen, x1, y1, x2, y2):
 def draw(screen, s): #will need to map world coordinates to image plane coordinates for accurate tracking
 
     CENTER_X = 400
-    CENTER_Y = 190
-    N = 1
+    CENTER_Y = 490
+    N = 200
+
+    screen.fill((0, 0, 0))
 
     for i in s:
-        point = [(i[1] + CENTER_X) * N, (i[2] + CENTER_Y) * N]
+        point = [i[1], i[2]]
+        if i[0] == "SPINE_SHOULDER":
+            S = point
+
+    for i in s:
+        point = [(i[1] - S[0]) * N  + CENTER_X, 600 - ((i[2] - S[1]) * N + CENTER_Y)]
         if i[0] == "HEAD":
             HEAD = point
         elif i[0] == "SPINE_SHOULDER":
             SPINE_SHOULDER = point
+            print(SPINE_SHOULDER)
         elif i[0] == "SPINE_BASE":
             SPINE_BASE = point
         elif i[0] == "WRIST_RIGHT":
@@ -39,6 +47,7 @@ def draw(screen, s): #will need to map world coordinates to image plane coordina
             KNEE_LEFT = point
         elif i[0] == "ANKLE_LEFT":
             ANKLE_LEFT = point
+        
         draw_point(screen, point[0], point[1])
     
     draw_line(screen, HEAD[0], HEAD[1], SPINE_SHOULDER[0], SPINE_SHOULDER[1])
