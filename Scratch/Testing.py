@@ -2,7 +2,7 @@ from pykinect2024 import PyKinect2024
 from pykinect2024.PyKinect2024 import *
 from pykinect2024.PyKinectRuntime import PyKinectRuntime
 
-from Pygame import user_gui
+from Pygame_stuff import user_gui
 
 import pygame
 
